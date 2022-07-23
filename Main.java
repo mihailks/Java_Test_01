@@ -43,3 +43,26 @@ public class Main {
         int T10 = T7 + T8 + T9;
         int T11 = T8 + T9 + T10;
         */
+
+
+ Scanner scanner = new Scanner(System.in);
+        int tribonacciFirst = Integer.parseInt(scanner.nextLine());
+        int tribonacciSecond = Integer.parseInt(scanner.nextLine());
+        int tribonacciThird = Integer.parseInt(scanner.nextLine());
+
+        ArrayList <Integer> tribonacciNumbers = new ArrayList<Integer>();
+        tribonacciNumbers.add(tribonacciFirst);
+        tribonacciNumbers.add(tribonacciSecond);
+        tribonacciNumbers.add(tribonacciThird);
+
+        int tribonacciCurrent = tribonacciThird;
+
+        while (tribonacciCurrent<10000){
+            tribonacciCurrent = tribonacciFirst + tribonacciSecond + tribonacciThird;
+
+            tribonacciNumbers.add(tribonacciCurrent);
+
+            tribonacciFirst = tribonacciSecond;
+            tribonacciSecond = tribonacciThird;
+            tribonacciThird = tribonacciCurrent;
+        }
